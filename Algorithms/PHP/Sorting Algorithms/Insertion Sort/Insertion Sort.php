@@ -44,6 +44,9 @@ function insertionSort(array &$array): void {
 
         $array[$i] = $current_value;
     }
+
+
+    // return $array; // No return statement (Passing By Reference)
 }
 */
 

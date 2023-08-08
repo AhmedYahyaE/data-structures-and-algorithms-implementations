@@ -40,7 +40,7 @@ function bubbleSort(array $array): array {
 
 
 /*
-// Passing By Reference: The same but with passing the argument By Reference (i.e. passing in the reference of an argument to the corresponding parameter of the called function) and removing the return statement and removing the function Return Type Declaration
+// Passing By Reference: The same but with passing the argument By Reference (i.e. passing in the reference of an argument to the corresponding parameter of the called function) and removing the Return Statement and removing the function Return Type Declaration
 function bubbleSort(array &$array) { // No Return Type Declaration
     $array_last_index = count($array) - 1;
 
@@ -65,15 +65,16 @@ function bubbleSort(array &$array) { // No Return Type Declaration
     }
 
 
-    // No return statement (Passing By Reference)
+    // return $array; // No return statement (Passing By Reference)
 }
 */
 
 
 
-// Passin By Value
+// Passing By Value
 echo '<pre>', var_dump(bubbleSort([64, 34, 25, 12, 22, 11, 90])), '</pre>';
 echo '<pre>', print_r(bubbleSort([64, 34, 25, 12, 22, 11, 90])), '</pre>';
+
 
 
 /*
