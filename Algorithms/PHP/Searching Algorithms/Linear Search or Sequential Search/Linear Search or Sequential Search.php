@@ -2,7 +2,7 @@
 // Linear Search / Sequential Search Algorithm
 // The Linear Search algorithm is best suited for small lists or when the list is not sorted (unsorted lists)
 // Time Complexity: O(n)
-// Space Complexity: O(1)
+// Space Complexity: O(1)    // In-place
 
 function linearSearchOrSequentialSearch($target, $array) {
     $array_length = count($array);

@@ -1,7 +1,7 @@
 <?php
 // Selection Sort algorithm
 // Time Complexity: O(n^2)
-// Space Complexity: O(1)
+// Space Complexity: O(1)    // In-place
 // The sorted array forms the left side of the array towards the right side of the array
 
 

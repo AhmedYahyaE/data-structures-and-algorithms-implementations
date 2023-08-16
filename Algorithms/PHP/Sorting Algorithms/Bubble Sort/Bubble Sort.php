@@ -1,7 +1,7 @@
 <?php
 // Bubble Sort algorithm
 // Time Complexity: O(n^2)
-// Space Complexity: O(1)
+// Space Complexity: O(1)    // In-place
 // It's called "Bubble" Sort because the largest number "bubbles" up to the far right end of the array
 // It's called "Bubble" Sort because with every outer loop iteration, the largest number "bubbles" up to the far right side of the array
 // The Sorted Array gets formed from the right side (end) of the array towards the left side (beginning)

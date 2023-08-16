@@ -2,8 +2,8 @@
 // Note: This algorithm requires the data to be already sorted (from left to right ascendingly) beforehand!
 
 // Binary Search algorithm
-// Time Complexity: O(log n)
-// Space Complexity: O(1)
+// Time Complexity: O(log n)    // log n because it encompasses division by 2 (binary! i.e. two!) (N.B. Just like Merge Sort!)
+// Space Complexity: O(1)    // In-place
 
 
 // Binary Search using 'Iteration' 'Iterative Approach' 'Non-recursive' 'loop'

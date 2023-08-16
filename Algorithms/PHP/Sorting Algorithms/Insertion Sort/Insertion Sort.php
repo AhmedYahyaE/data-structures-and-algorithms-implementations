@@ -1,7 +1,7 @@
 <?php
 // Insertion Sort algorithm
 // Time Complexity: O(n^2)
-// Space Complexity: O(1)
+// Space Complexity: O(1)    // In-place
 
 /*
 // FIRST: MY OWN IMPLEMENTATION (which is a little different the prevailing implementation of the algorithm)
