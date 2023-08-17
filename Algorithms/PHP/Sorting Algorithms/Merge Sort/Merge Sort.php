@@ -22,8 +22,8 @@ function mergeSortRecursive_1(array $array) {
     // echo $middle_index . '<br>';
 
     // Cut the array into two halves
-    $left_array_half  = array_slice($array, 0, $middle_index); // Extract the array from the beginning till the its half
-    $right_array_half = array_slice($array, $middle_index);    // Extract the array from its half to its end
+    $left_array_half  = array_slice($array, 0, $middle_index); // Extract the array from the beginning (first index) till its half (middle index)
+    $right_array_half = array_slice($array, $middle_index);    // Extract the array from its half (after the middle index) to its end (last index)
 
     // echo '<pre>', var_dump($left_array_half), '</pre>';
     // echo '<pre>', var_dump($right_array_half), '</pre>';
@@ -86,14 +86,40 @@ function merge_1(array $leftArray, array $rightArray): array { // This function 
 
 // Recursive 2 Approach/Solution (Recursion) - Top-Down Merge Sort - the most prevalent common implementation on the Internet
 function mergeSortRecursive_2(&$array, $left_array_index, $right_array_index) {
+    // Recursion Base Case/ Stopping Case / Terminating Case
     if ($left_array_index < $right_array_index) {
         $middle_index = $left_array_index + (int) (($right_array_index - $left_array_index) / 2); // (int) is Type Casting from float to integer in case of odd array length producing a float (e.g.    7 / 2 = 3.5 becomes 3    )    // array index/key = array length/size - 1    // If the length of the array is 1 or less, it's already sorted, so we return the array as is
- 
+        // echo '<b>$left_array_index of the left array</b> is <b>' . $left_array_index . '</b>' . ' and <b>$middle_index</b> is <b>' . $middle_index . '</b><br>';
+        // echo '<b>$left_array_index of the right array</b> is <b>' . $middle_index + 1 . '</b>' . ' and <b>$right_array_index</b> is <b>' . $right_array_index . '</b><br>';
+        // echo '<br><br>';
+
+
+        // echo $left_array_index  . '<br>';
+        // echo $middle_index      . '<br>';
+        // echo $right_array_index . '<br>';
+        // echo '<br>';
+
+
         // Sort first and second halves
-        mergeSortRecursive_2($array, $left_array_index, $middle_index);
-        mergeSortRecursive_2($array, $middle_index + 1, $right_array_index); // $middle_index is the end index in the left array, so this means that the first index in the right array is the first element after the $middle_index
- 
+        mergeSortRecursive_2($array, $left_array_index, $middle_index); // This recursive function calls last it's exhausted, then afterwards, the next one (the second mergeSortRecursive_2() function) starts to be called till it's exhausted    // $middle_index is the end index in the left array, so this means that the first index in the right array is the first element after the $middle_index     // Call mergeSortRecursive_2() recursively on the the left array half FIRST till it's exhausted ...
+        // exit;
+        // echo 'The SECOND mergeSortRecursive_2() function is called!!<br>';
+        mergeSortRecursive_2($array, $middle_index + 1, $right_array_index); // Afterwards (after the first mergeSortRecursive_2() function recursive calls have been exhausted), call mergeSortRecursive_2() recursively on the right array half SECONDLY till it's exhausted
+
+
+        // echo '<b>$left_array_index of the left array</b> is <b>' . $left_array_index . '</b>' . ' and <b>$middle_index</b> is <b>' . $middle_index . '</b><br>';
+        // echo '<b>$left_array_index of the right array</b> is <b>' . $middle_index + 1 . '</b>' . ' and <b>$right_array_index</b> is <b>' . $right_array_index . '</b><br>';
+        // echo '<br><br>';
+
+
+        // echo '<pre>', var_dump($array), '</pre>';
+        // exit;
+        // echo $right_array_index . '<br>';
+
+        // echo 'The merge_2() function is called!!<br>';
+        echo '<b>$left_array_index</b> is <b>' . $left_array_index . '</b>' . ' and <b>$middle_index</b> is <b>' . $middle_index . '</b> and <b>$right_array_index</b> is <b>' . $right_array_index . '</b><br>';
         merge_2($array, $left_array_index, $middle_index, $right_array_index);
+        // echo '<pre>', var_dump($array), '</pre>';
     }
 }
 
@@ -113,6 +139,11 @@ function merge_2(&$array, $leftArrayStartIndex, $middle_index, $rightArrayEndInd
     for ($rightArrayIndex = 0; $rightArrayIndex < $rightArrayLength; $rightArrayIndex++) {
         $rightArray[$rightArrayIndex] = $array[($middle_index + 1) + $rightArrayIndex]; // $middle_index is the end index of the left array
     }
+
+
+    echo '<pre>', var_dump($leftArray), '</pre>';
+    echo '<pre>', var_dump($rightArray), '</pre>';
+    echo '<br><br><br>';
 
 
 
@@ -148,6 +179,8 @@ function merge_2(&$array, $leftArrayStartIndex, $middle_index, $rightArrayEndInd
         $j++;
         $sortedMergedArrayIndex++;
     }
+
+    // echo '<pre>', var_dump($array), '</pre>';
 }
 
 
@@ -244,7 +277,7 @@ $array = [12, 11, 13, 5, 6, 7]; // Unsorted array
 $array_length     = count($array);
 $array_last_index = $array_length - 1;
 mergeSortRecursive_2($array, 0, $array_last_index);
-echo '<pre>', var_dump($array), '</pre>'; // After sorting
+// echo '<pre>', var_dump($array), '</pre>'; // After sorting
 // echo '<pre>', print_r($array), '</pre>';  // After sorting
 
 
