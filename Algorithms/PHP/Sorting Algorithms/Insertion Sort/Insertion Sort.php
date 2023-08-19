@@ -3,57 +3,8 @@
 // Time Complexity: O(n^2)
 // Space Complexity: O(1)    // In-place
 
-/*
-// FIRST: MY OWN IMPLEMENTATION (which is a little different the prevailing implementation of the algorithm)
-// Passing By Value
-function insertionSort(array $array): array {
-    $array_length = count($array);
-
-    for ($i = 1; $i < $array_length; $i++) {
-        $current_value = $array[$i];
-
-        while ($i >= 1 && $current_value < $array[$i - 1]) { // is the same as:    while ($i > 0 && $current_value < $array[$i - 1]) {
-            // echo $i . '<br>';
-            $array[$i] = $array[$i - 1];
-            $i--; // is the same as:    $i = $i - 1;    is the same as:    $i -=1;
-        }
-
-        $array[$i] = $current_value;
-    }
 
 
-    return $array;
-}
-*/
-
-
-/*
-// MY OWN IMPLEMENTATION (which is a little different the prevailing implementation of the algorithm)
-// Passing By Reference: The same but with passing the argument By Reference (i.e. passing in the reference of an argument to the corresponding parameter of the called function) and removing the return statement and removing the function return type
-function insertionSort(array &$array): void {
-    $array_length = count($array);
-
-    for ($i = 1; $i < $array_length; $i++) {
-        $current_value = $array[$i];
-
-        while ($i >= 1 && $current_value < $array[$i - 1]) { // is the same as:    while ($i > 0 && $current_value < $array[$i - 1]) {
-            // echo $i . '<br>';
-            $array[$i] = $array[$i - 1];
-            $i--; // is the same as:    $i = $i - 1;    is the same as:    $i -=1;
-        }
-
-        $array[$i] = $current_value;
-    }
-
-
-    // return $array; // No return statement (Passing By Reference)
-}
-*/
-
-
-
-
-// SECOND: The prevailing implementation of the algorithm
 // Passing By Value
 function insertionSort(array $array): array {
     $array_length = count($array);
@@ -64,7 +15,7 @@ function insertionSort(array $array): array {
 
         while ($previous_value_index >= 0 && $current_value < $array[$previous_value_index]) {
             $array[$previous_value_index + 1] = $array[$previous_value_index];
-            $previous_value_index--; // is the same as:    $previous_value_index = $previous_value_index - 1;    is the same as:    $previous_value_index -=1;
+            $previous_value_index--; // is the same as:    $previous_value_index = $previous_value_index - 1;    is the same as:    $previous_value_index -= 1;
             // echo $previous_value_index . '<br>';
         }
 
@@ -79,7 +30,6 @@ function insertionSort(array $array): array {
 
 
 /*
-// SECOND: The prevailing implementation of the algorithm
 // Passing By Reference: The same but with passing the argument By Reference (i.e. passing in the reference of an argument to the corresponding parameter of the called function) and removing the return statement and removing the function return type
 function insertionSort(array &$array): void {
     $array_length = count($array);
@@ -90,7 +40,7 @@ function insertionSort(array &$array): void {
 
         while ($previous_value_index >= 0 && $current_value < $array[$previous_value_index]) {
             $array[$previous_value_index + 1] = $array[$previous_value_index];
-            $previous_value_index--; // is the same as:    $previous_value_index = $previous_value_index - 1;    is the same as:    $previous_value_index -=1;
+            $previous_value_index--; // is the same as:    $previous_value_index = $previous_value_index - 1;    is the same as:    $previous_value_index -= 1;
             // echo $previous_value_index . '<br>';
         }
 

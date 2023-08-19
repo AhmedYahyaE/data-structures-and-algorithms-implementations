@@ -1,15 +1,15 @@
 <?php
 // Note: This algorithm requires the data to be already sorted (from left to right ascendingly) beforehand!
-
 // Binary Search algorithm
-// Time Complexity: O(log n)    // log n because it encompasses division by 2 (binary! i.e. two!) (N.B. Just like Merge Sort!)
+// Time Complexity: O(log n)    // log n because it includes division by 2 (binary! i.e. two!) (N.B. Just like Merge Sort!)
 // Space Complexity: O(1)    // In-place
 
 
-// Binary Search using 'Iteration' 'Iterative Approach' 'Non-recursive' 'loop'
+
+// Binary Search using 'Iteration' 'Iterative Approach' 'Non-recursive'
 function binarySearchIterative($target, array $array): int|false { // The function returns the 'index' of the target
     $left_index = 0;
-    $right_index = count($array) - 1; // array index/key = array length/size - 1
+    $right_index = count($array) - 1; 
 
     while ($left_index <= $right_index) {
         $middle_index = floor(($left_index + $right_index) / 2); // Dividing by two / 2 denotes the 'binary' word in 'Binary Search', and also indicated the logarithmic relationship between the Input Size and the Time taken to search the array (Time Complexity Big O Notation)
@@ -65,4 +65,4 @@ function binarySearchRecursive($target, array $array, $left_index, $right_index)
 
 $sortedArray = [1, 3, 5, 7, 9, 11, 13];
 $targetElement = 13;
-echo '<pre>Recursive Approach:<br>', var_dump(binarySearchRecursive($targetElement, $sortedArray, 0, count($sortedArray) - 1)), '</pre>'; // binarySearchRecursive() function returns the 'index' of the target    // array index/key = array length/size - 1
+echo '<pre>Recursive Approach:<br>', var_dump(binarySearchRecursive($targetElement, $sortedArray, 0, count($sortedArray) - 1)), '</pre>'; // binarySearchRecursive() function returns the 'index' of the target    

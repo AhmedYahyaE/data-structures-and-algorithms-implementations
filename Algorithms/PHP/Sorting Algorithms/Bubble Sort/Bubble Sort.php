@@ -6,7 +6,7 @@
 // It's called "Bubble" Sort because with every outer loop iteration, the largest number "bubbles" up to the far right side of the array
 // The Sorted Array gets formed from the right side (end) of the array towards the left side (beginning)
 // The last element after each pass becomes in its correct position
-// The last element after each pass is in its correct position.
+// The last element after each pass becomes in its correct position
 
 
 
@@ -73,7 +73,7 @@ function bubbleSort(array &$array) { // No Return Type Declaration
 
 // Passing By Value
 echo '<pre>', var_dump(bubbleSort([64, 34, 25, 12, 22, 11, 90])), '</pre>';
-echo '<pre>', print_r(bubbleSort([64, 34, 25, 12, 22, 11, 90])), '</pre>';
+// echo '<pre>', print_r(bubbleSort([64, 34, 25, 12, 22, 11, 90])), '</pre>';
 
 
 

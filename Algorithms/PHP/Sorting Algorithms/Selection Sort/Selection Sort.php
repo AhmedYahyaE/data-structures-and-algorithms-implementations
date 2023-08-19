@@ -16,16 +16,12 @@ function selectionSort(array $array): array {
 
         // Do a Linear Search / Sequential Search to determine the smallest number array index
         for ($j = $i + 1; $j < $array_length; $j++) { // Start from the 2nd index till the end of the array
-            // echo $j . '<br>';
             if ($array[$j] < $array[$smallestNumberIndex]) {
-                // echo $j . '<br>';
                 $smallestNumberIndex = $j;
-                // echo $smallestNumberIndex . '<br>';
             }
         }
-        // exit;
 
-        if ($smallestNumberIndex != $i) { // If the supposition/hypothesis we made at the beginning of the outer loop (i.e.    $smallestNumberIndex = $i;    ) has been CHANGED by the if condition inside the inner/nested loop, this means that there is some sorting to make 
+        if ($smallestNumberIndex != $i) { // If the supposition/hypothesis we made at the beginning of the outer loop (i.e.    $smallestNumberIndex = $i;    ) has been CHANGED by the if condition inside the inner/nested loop, this means that there is some sorting to do
             // Swap elements
             $temporaryVariable = $array[$i]; // Temporary variable used for swapping
             $array[$i] = $array[$smallestNumberIndex]; // Replace the leftmost number with the smallest number
@@ -59,7 +55,7 @@ function selectionSort(array &$array) {
         }
         // exit;
 
-        if ($smallestNumberIndex != $i) { // If the supposition/hypothesis we made at the beginning of the outer loop (i.e.    $smallestNumberIndex = $i;    ) has been changed by the if condition in the nested/inner loop, this means that there is some sorting to make 
+        if ($smallestNumberIndex != $i) { // If the supposition/hypothesis we made at the beginning of the outer loop (i.e.    $smallestNumberIndex = $i;    ) has been changed by the if condition in the nested/inner loop, this means that there is some sorting to do
             // Swap elements
             $temporaryVariable = $array[$i]; // Temporary variable used for swapping
             $array[$i] = $array[$smallestNumberIndex]; // Replace the leftmost number with the smallest number
@@ -76,7 +72,7 @@ function selectionSort(array &$array) {
 
 // Passing By Value
 echo '<pre>', var_dump(selectionSort([64, 25, 12, 22, 11])), '</pre>';
-echo '<pre>', print_r(selectionSort([64, 25, 12, 22, 11])), '</pre>';
+// echo '<pre>', print_r(selectionSort([64, 25, 12, 22, 11])), '</pre>';
 
 
 

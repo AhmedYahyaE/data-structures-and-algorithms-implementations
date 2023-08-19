@@ -1,7 +1,6 @@
 <?php
-// Stack (LIFO)    // https://www.youtube.com/watch?v=N4o69Gqarhc&list=PLCInYL3l2AajqOUW_2SwjWeMwf4vL4RSp&index=4
-// Tip: Use ChatGPT to implement a PHP Stack
-// Examples of realistic use cases of Stacks is: Undoing (CTRL + Z), and going back in browser history
+// Stack (LIFO)
+// Examples of realistic use cases of Stacks is: Undoing (CTRL + Z), and going back in browser history, ...
 
 
 
@@ -25,12 +24,12 @@ class Stack {
 
 
 
-    public function push($element): void { // push/append to the end of the Stack
+    public function push($element): void { // push onto the top of the Stack (i.e. append to the end of the PHP array)
         $this->top++;
         $this->stackArray[$this->top] = $element;
     }
 
-    public function pop(): void { // remove the last element of the Stack
+    public function pop(): void { // pop the last element off the Stack (i.e. remove the last element from the PHP array)
         if ($this->isStackEmpty()) {
             echo 'Stack is already empty!';
         } else {
@@ -39,7 +38,7 @@ class Stack {
         }
     }
 
-    public function getTop() { // get the top element of the Stack
+    public function getTop() { // retrieve/get the top element of the Stack
         if ($this->isStackEmpty()) {
             echo 'Stack is empty!';
         } else {
@@ -61,12 +60,10 @@ class Stack {
 
 
 $stackObject = new Stack();
-echo '<pre>', var_dump($stackObject), '</pre>';
 
 $stackObject->push('E');
 $stackObject->push(17);
 $stackObject->push('car');
-// echo '<pre>', var_dump($stackObject), '</pre>';
 
 echo $stackObject->getTop() . '<br>';
 $stackObject->pop();
