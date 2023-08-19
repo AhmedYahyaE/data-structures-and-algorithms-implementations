@@ -77,42 +77,46 @@ function quicksortIterative(&$array, $array_start_index, $array_end_index) { // 
     // Initialize the top of the Stack (i.e. the top index)
     $top = -1;
 
-    // Push the initial values of both the $array_start_index and $array_end_index to the Stack
+    // Push the initial values of both the $array_start_index and $array_end_index onto the top of the Stack (i.e. append them to the PHP array)
     $stackArray[++$top] = $array_start_index; // Note: Pre-Increment Operator MUST be used here, not post-increment operator!    $stackArray[$top++] = $array_start_index;    doesn't work!    // Append to the PHP array
     $stackArray[++$top] = $array_end_index;   // Note: Pre-Increment Operator MUST be used here, not post-increment operator!    $stackArray[$top++] = $array_end_index;      doesn't work!    // Append to the PHP array
-    echo '<pre>', var_dump($stackArray), '</pre>';
+    // echo '<pre>', var_dump($stackArray), '</pre>';
 
-    echo '<b>$top</b> index </b> is <b>' . $top . '</b><br>';
+    // echo '<b>$top</b> index </b> is <b>' . $top . '</b><br>';
 
     // Keep popping $array_start_index-es and $array_end_index-es off the Stack while it's not empty    // Here, we use the while loop in place of 'Recursion' in the quicksortRecursive() function in order to keep calling the partition() function
     while ($top >= 0) { // is the same as:    while ($top > -1) {
         // Remove the $array_start_index and $array_end_index from the PHP array (i.e. pop them off the Stack), but create variables of their values to use them later with the partition() function
         $array_end_index   = $stackArray[$top--]; // Note: Post-Decrement Operator MUST be used here, not pre-decrement operator!    $stackArray[--$top];    doesn't work!    // Append to the PHP array
         $array_start_index = $stackArray[$top--]; // Note: Post-Decrement Operator MUST be used here, not pre-decrement operator!    $stackArray[--$top];    doesn't work!    // Append to the PHP array
-        echo '<b>$top</b> index </b> is <b>' . $top . '</b><br>';
-        echo '<pre>', var_dump($stackArray), '</pre>';
-        exit;
+        // echo '<b>$top</b> index </b> is <b>' . $top . '</b><br>';
+        // echo '<pre>', var_dump($stackArray), '</pre>';
+        // exit;
 
         $partitioning_index = partition($array, $array_start_index, $array_end_index); // $partitioning_index is the $pivot
-        // echo '<pre>', var_dump($array), '</pre>';
-        // echo '<pre>', var_dump($stackArray), '</pre>';
         // echo $partitioning_index . '<br>';
+        // echo '<pre>', var_dump($stackArray), '</pre>';
+        // echo '<pre>', var_dump($array), '</pre>';
         // exit;
 
 
-        if ($partitioning_index - 1 > $array_start_index) { // If there are elements on the left side of the pivot ($partitioning_index), push the left side to the Stack (i.e. push the $array_start_index and $array_end_index of the left side)
+        if ($partitioning_index - 1 > $array_start_index) { // If there are elements on the left side of the pivot ($partitioning_index), push the left side onto the top of the Stack (i.e. push the $array_start_index and $array_end_index of the left side)
             $stackArray[++$top] = $array_start_index;      // Note: Pre-Increment Operator MUST be used here, not post-increment operator!    $stackArray[$top++] = $array_start_index;    doesn't work!
             $stackArray[++$top] = $partitioning_index - 1; // Note: Pre-Increment Operator MUST be used here, not post-increment operator!    $stackArray[$top++] = $array_start_index;    doesn't work!
         }
 
-        if ($partitioning_index + 1 < $array_end_index) { // If there are elements on the right side of the pivot ($partitioning_index), push the right side to the Stack (i.e. push the $array_start_index and $array_end_index of the right side)
+        if ($partitioning_index + 1 < $array_end_index) { // If there are elements on the right side of the pivot ($partitioning_index), push the right side onto the top of the Stack (i.e. push the $array_start_index and $array_end_index of the right side)
             $stackArray[++$top] = $partitioning_index + 1; // Note: Pre-Increment Operator MUST be used here, not post-increment operator!    $stackArray[$top++] = $array_start_index;    doesn't work!
             $stackArray[++$top] = $array_end_index;        // Note: Pre-Increment Operator MUST be used here, not post-increment operator!    $stackArray[$top++] = $array_start_index;    doesn't work!
         }
+
+        echo '<b>$top</b> index </b> is <b>' . $top . '</b><br>';
+        // echo '<pre>', var_dump($stackArray), '</pre>';
     }
 
-    echo '<b>$top</b> index </b> is <b>' . $top . '</b><br>';
+    // echo '<b>$top</b> index </b> is <b>' . $top . '</b><br>';
     // echo '<pre>', var_dump($stackArray), '</pre>';
+    // echo '<pre>', var_dump($array), '</pre>';
     // exit;
 }
 
