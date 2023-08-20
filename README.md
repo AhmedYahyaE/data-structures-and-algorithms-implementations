@@ -8,3 +8,38 @@ Each implementation is accompanied by detailed explanations of its properties, o
 ![algorithms](https://github.com/AhmedYahyaE/data-structures-and-algorithms-implementations/assets/118033266/24a0ffd1-cca5-4100-81a8-d2f1ada3c68a)
 
 ![big-o-notation](https://github.com/AhmedYahyaE/data-structures-and-algorithms-implementations/assets/118033266/8c5528ba-15a8-429c-9c01-3907ed77a3e2)
+
+## Contents:
+
+### Data Structures:
+
+- Arrays
+- Stacks
+- Queues
+- Linked Lists (Singly and Doubly Linked Lists)
+- Hash Tables
+- Graphs
+- Trees
+
+### Algorithms:
+- Sequential Search / Linear Search
+  - Time Complexity: O(n)
+  - Space Complexity: O(1)
+- Binary Search
+  - Time Complexity: O(log n)
+  - Space Complexity: O(1)
+- Insertion Sort
+  - Time Complexity: O(n^2)
+  - Space Complexity: O(1)
+- Selection Sort
+  - Time Complexity: O(n^2)
+  - Space Complexity: O(1)
+- Bubble Sort
+  - Time Complexity: O(n^2)
+  - Space Complexity: O(1)
+- Merge Sort
+  - Time Complexity: O(n log n)
+  - Space Complexity: O(n)
+- Quicksort
+  - Time Complexity: O(n^2)
+  - Space Complexity: O(n)
