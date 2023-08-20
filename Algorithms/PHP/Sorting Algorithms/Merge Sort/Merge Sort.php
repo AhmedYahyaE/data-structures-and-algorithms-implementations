@@ -1,6 +1,6 @@
 <?php
 // Merge Sort algorithm
-// Time Complexity: O(n*log n) or T(n) = 2T(n/2) + O(n)    // n log n (i.e. logarithmic) because it encompasses division by 2 (N.B. Just like Bubble Sort!)
+// Time Complexity: O(n log n) or T(n) = 2T(n/2) + O(n)    // n log n (i.e. logarithmic) because it encompasses division by 2 (N.B. Just like Bubble Sort!)
 // Space Complexity: O(n)    // Non In-Place algorithm, which means it requires much memory
 // Divide and Conquer algorithm (Divide: the unsorted array into two halves & Conquer: Recursively sort each of the halves)
 
