@@ -20,7 +20,7 @@
                 - Space: No additional space required.
         3) Insertion at the End (append) (insertAtEnd): Time Complexity: O(n), Space Complexity: O(1)
             Explanation:
-                - Time: Linear time because inserting at the end requires traversing the entire list to reach the last node before adding the new node.
+                - Time: Linear time because inserting at the end requires traversing the entire list to reach the last node before adding the new node. (because, unlike Doubly Linked Lists, a Singly Linked List's node doesn't have a poninter/reference to the previous node)
                 - Space: Constant space as only the new node is created, no additional space proportional to the list size.
         4) Deletion at the End (deleteAtEnd): Time Complexity: O(n), Space Complexity: O(1)
             Explanation:
